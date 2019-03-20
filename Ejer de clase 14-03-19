@@ -1,0 +1,393 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BORAbora
+{
+    class Socio
+    {
+
+        private String nombre;
+        private int año;
+
+       
+        public Socio()
+        {
+
+            this.nombre = "";
+            this.año = 0;
+
+        }
+
+
+        public Socio(string nom)
+        {
+
+            nombre = nom;
+
+        }
+
+        public void Año(int a)
+        {
+            año = a;
+        }
+
+
+        public int RetornarAño()
+        {
+            return año;
+        }
+
+
+        public string RetornarNombre()
+        {
+            return nombre;
+        }
+
+
+        public void ImpInfo()
+        {
+
+            Console.WriteLine("El año de antigüedad que tiene y su nombres es :" + año+ nombre);
+
+        }
+
+
+
+    }
+}
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BORAbora
+{
+    class Club
+    {
+
+
+        Socio sc1, sc2, sc3;
+        static void Main(string[] args)
+        {
+
+
+            Club cb = new Club();
+
+            cb.Datos();
+            cb.infoSocio();
+
+            Console.ReadKey();
+
+        }
+
+        public Club()
+        {
+            sc1 = new Socio("Ana");
+            sc2 = new Socio("KARLA");
+            sc3 = new Socio("EVA");
+        }
+
+
+        public void Datos()
+        {
+            sc1.Año(7);
+            sc2.Año(19);
+            sc3.Año(33);
+        }
+
+
+        public void infoSocio()
+        {
+
+            Console.WriteLine(sc1.RetornarNombre() + " tiene " + sc1.RetornarAño() + " años en el club");
+            Console.WriteLine();
+            Console.WriteLine(sc2.RetornarNombre() + " tiene " + sc2.RetornarAño() + " años en el club");
+            Console.WriteLine();
+            Console.WriteLine(sc3.RetornarNombre() + " tiene " + sc3.RetornarAño() + " años en el club");
+
+        }
+
+
+
+
+    }
+}
+
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2005
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BORAbora", "BORAbora\BORAbora.csproj", "{3469C828-A966-4A12-8C7B-8535B0150253}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3469C828-A966-4A12-8C7B-8535B0150253}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3469C828-A966-4A12-8C7B-8535B0150253}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3469C828-A966-4A12-8C7B-8535B0150253}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3469C828-A966-4A12-8C7B-8535B0150253}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {953F6EC5-699E-4A33-ACC0-4FB61C88D5A2}
+	EndGlobalSection
+EndGlobal
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace FuncionesBasicas
+{
+    class Operaciones
+    {
+
+        int num1, num2;
+
+        public Operaciones()
+        {
+            this.num1 = 0;
+            this.num2 = 0;
+        }
+
+
+
+        public Operaciones(int n1, int n2)
+        {
+            num1 = n1;
+            num2 = n2;
+        }
+
+
+        public int RetNum1()
+        {
+            return num1;
+        }
+
+        public int RetNum2()
+        {
+            return num2;
+        }
+
+
+        public void ImpOpe()
+        {
+            int resul = num1 + num2;
+            Console.WriteLine("el resultado es:" + resul);
+        }
+
+
+    }
+}
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace FuncionesBasicas
+{
+    class Program
+    {
+
+
+        Operaciones op1, op2, op3, op4;
+        static void Main(string[] args)
+        {
+
+            Program oper = new Program();
+            oper.Operar();
+            oper.CalcOper();
+
+            Console.ReadKey();
+        }
+        int resul1 = 0, resul2 = 0, resul3 = 0, resul4 = 0;
+
+
+        public Program()
+        {
+            op1 = new Operaciones(23, 10);
+            op2 = new Operaciones(11, 2);
+            op3 = new Operaciones(5, 9);
+            op4 = new Operaciones(20, 5);
+        }
+
+        public void Operar()
+        {
+            op1 = new Operaciones(8, 12);
+            op2 = new Operaciones(3, 9);
+            op3 = new Operaciones(11, 33);
+            op4 = new Operaciones(25, 5);
+        }
+
+        public void CalcOper()
+        {
+            resul1 = op1.RetNum1() + op1.RetNum2();
+            resul2 = op2.RetNum1() - op2.RetNum2();
+            resul3 = op3.RetNum1() * op3.RetNum2();
+            resul4 = op4.RetNum1() / op4.RetNum2();
+            Console.WriteLine("El resultado de la suma es " + resul1);
+            Console.WriteLine("El resultado de la resta es " + resul2);
+            Console.WriteLine("El resultado de la multiplicacion es " + resul3);
+            Console.WriteLine("El resultado de la division es " + resul4);
+        }
+
+
+
+
+
+    }
+
+
+    }
+}
+
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Planilla
+{
+    class Empleado
+    {
+
+        public String nom;
+        public double sueldo;
+
+
+
+
+        public Empleado()
+        {
+            this.nom = "";
+            this.sueldo = 0;
+        }
+
+
+
+
+        public Empleado(string n)
+        {
+            nom = n;
+        }
+
+
+
+
+        public void Sueldo(double s)
+        {
+            sueldo = s;
+        }
+
+
+        public string RNombre()
+        {
+            return nom;
+        }
+
+
+        public double RSueldo()
+        {
+            return sueldo;
+        }
+
+
+
+
+        public void Imprimir()
+        {
+            Console.WriteLine("Su sueldo es: "+nom + sueldo);
+        }
+
+
+    }
+}
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Planilla
+{
+    class Program
+    {
+
+
+        Empleado emp1;
+        static void Main(string[] args)
+        {
+
+            Empleado obj = new Empleado();
+
+
+            obj.DatosSueldo();
+            obj.DatosEmp();
+
+
+            Console.ReadKey();
+        }
+
+
+        public Empleado()
+        {
+            emp1 = new Empleado("Margarita");
+        }
+
+
+        public void DatosSueldo()
+        {
+            emp1.Sueldo(5000.00);
+        }
+
+
+        public void DatosEmp()
+        {
+            if (emp1.RSueldo() > 3000)
+            {
+                Console.WriteLine(emp1.RNombre() + " con sueldo " + emp1.RSueldo());
+                Console.WriteLine("Debe pagar impuestos");
+            }
+            else
+            {
+                Console.WriteLine(emp1.RNombre() + " con sueldo " + emp1.RSueldo());
+                Console.WriteLine("No debe pagar impuestos");
+            }
+        }
+
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
